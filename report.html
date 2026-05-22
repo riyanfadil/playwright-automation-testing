@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automation Report - SauceDemo</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 40px; background-color: #f0f2f5; color: #333; }
+        h1 { text-align: center; color: #1a73e8; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 25px; }
+        .card h2 { margin-top: 0; color: #444; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+        .label { font-weight: bold; color: #555; }
+        .success { color: #28a745; font-weight: bold; padding: 4px 8px; background: #e6f4ea; border-radius: 4px; }
+        .failed { color: #dc3545; font-weight: bold; padding: 4px 8px; background: #fce8e6; border-radius: 4px; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; margin-top: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Automation Test Report</h1>
+        
+        <div class="card">
+            <h2>1. Login Information</h2>
+            <div class="row"><span class="label">Username Used:</span> <span>standard_user</span></div>
+            <div class="row"><span class="label">Password Used:</span> <span>secret_sauce</span></div>
+        </div>
+
+        <div class="card">
+            <h2>2. Checkout Details</h2>
+            <div class="row"><span class="label">First Name:</span> <span>Riyan</span></div>
+            <div class="row"><span class="label">Last Name:</span> <span>Antigravity</span></div>
+            <div class="row"><span class="label">Postal Code:</span> <span>12345</span></div>
+        </div>
+
+        <div class="card">
+            <h2>3. Price Summary</h2>
+            <div class="row"><span class="label">Subtotal:</span> <span>$39.98</span></div>
+            <div class="row"><span class="label">Tax:</span> <span>$3.20</span></div>
+            <div class="row"><span class="label">Total:</span> <span><strong style="font-size:1.2em;color:#e53935;">$43.18</strong></span></div>
+            
+            <p class="label" style="margin-top:20px;">Screenshot (Halaman Harga):</p>
+            <img src="screenshoot/1_harga_checkout.png" alt="Price Summary Screenshot" />
+        </div>
+
+        <div class="card">
+            <h2>4. Final Validation</h2>
+            <div class="row">
+                <span class="label">Status:</span> 
+                <span class="success">SUCCESS</span>
+            </div>
+            <div class="row"><span class="label">Message Found:</span> <span>"Thank you for your order!"</span></div>
+            
+            <p class="label" style="margin-top:20px;">Screenshot (Halaman Sukses):</p>
+            <img src="screenshoot/2_checkout_selesai.png" alt="Checkout Complete Screenshot" />
+        </div>
+    </div>
+</body>
+</html>
+        
