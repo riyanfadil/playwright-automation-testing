@@ -1,24 +1,16 @@
-# SauceDemo E2E Automation Testing - Playwright
+# Playwright Automation Testing - SauceDemo
 
-End-to-end automation testing project using Playwright for validating login, shopping flow, checkout process, and test evidence generation on SauceDemo.
+**End-to-End Automation Testing Framework** using **Playwright** for [SauceDemo](https://www.saucedemo.com/).
 
----
+![Playwright](https://img.shields.io/badge/Playwright-2C3E50?logo=playwright&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?logo=github-actions&logoColor=white)
 
-## Overview
+## 🚀 Project Overview
 
-This project was created as a QA Automation portfolio project using Playwright and JavaScript.
+This project is a complete **End-to-End (E2E) Automation Testing** portfolio project built with Playwright. It covers the full user journey on SauceDemo website, from login to checkout process, with proper test evidence and reporting.
 
-The automation workflow covers:
-
-* Dynamic login credential handling
-* Login validation
-* Product purchase simulation
-* Checkout automation
-* Dynamic variable implementation
-* Screenshot evidence generation
-* Automated HTML reporting
-
-The goal of this project is to simulate a real-world end-to-end automation testing process with maintainable and reusable test scripts.
+**Goal**: Demonstrate professional QA Automation skills using modern tools and best practices.
 
 ---
 
@@ -57,38 +49,42 @@ The goal of this project is to simulate a real-world end-to-end automation testi
 
 ---
 
-## Technologies Used
+## 🛠️ Tech Stack
 
-* Playwright
-* JavaScript
-* Node.js
-* HTML Report
-* Environment Variables (.env)
+- **Language**: TypeScript
+- **Framework**: Playwright Test
+- **Architecture**: Page Object Model (POM)
+- **Reporting**: Playwright HTML + Allure Report
+- **CI/CD**: GitHub Actions (Monthly Scheduler + Email Report)
+- **Test Data**: Dynamic + Environment Variables
 
 ---
 
-## Features
+## ✨ Key Features
 
-✅ End-to-End Automation Testing
-✅ Dynamic Credential Retrieval
-✅ Reusable Variables
-✅ Automated Screenshot Capture
-✅ HTML Report Generation
-✅ Lightweight Automation Workflow
-✅ Clean & Simple Project Structure
+✅ Full E2E User Journey (Login → Shopping → Checkout)
+✅ Dynamic credential handling
+✅ Reusable Page Object Model (POM)
+✅ Automated screenshot evidence capture
+✅ HTML + Allure Reporting
+✅ **Monthly Automated Test** with Email Report via GitHub Actions
+✅ Cross-browser support
 
 ---
 
 ## Project Structure
 
 ```bash
-├── node_modules/
-├── screenshoot/
-├── .env
+playwright-automation-testing/
+├── .github/workflows/              # GitHub Actions (Monthly Report)
+├── pages/                          # Page Object Models
+├── tests/                          # Test specifications
+├── utils/                          # Helpers & utilities
+├── screenshots/                    # Automated evidence
+├── test-results/                   # Test artifacts
+├── playwright.config.ts
 ├── package.json
-├── package-lock.json
-├── report.html
-└── sauce_test.js
+└── README.md
 ```
 
 ### Folder & File Description
@@ -132,6 +128,15 @@ npx playwright show-report
 
 ---
 
+Report
+🔄 CI/CD & Monthly Automation
+
+Monthly Test dijalankan otomatis 1x sebulan via GitHub Actions
+Full report dikirim otomatis ke email
+Semua execution history bisa dilihat di tab Actions
+
+---
+
 ## Screenshots & Reports
 
 This project includes:
@@ -148,6 +153,16 @@ screenshoot/
 
 ---
 
+Actions
+
+📊 Reports & Evidence
+
+HTML Report: Generated after test execution
+Screenshots: Stored in screenshots/ folder for evidence
+Allure Report: Detailed test visualization (optional)
+
+---
+
 ## Website Tested
 
 https://www.saucedemo.com
@@ -158,12 +173,13 @@ https://www.saucedemo.com
 
 This project was built to improve skills in:
 
-* QA Automation Testing
+* Modern QA Automation Testing
 * End-to-End Testing
 * Automation Workflow Design
-* Test Evidence Documentation
+* Test Evidence & Reporting
 * Dynamic Test Data Handling
 * Playwright Automation Framework
+* CI/CD Integration
 
 ---
 

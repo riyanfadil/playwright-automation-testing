@@ -1,0 +1,67 @@
+name: SauceDemo - Monthly Playwright Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  
+  schedule:
+    - cron: '0 2 1 * *'     # Tanggal 1 jam 09:00 WIB
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Tests
+        run: npx playwright test
+
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+      - name: Send Email Report
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "🧪 SauceDemo Monthly Report - ${{ job.status }}"
+          to: ${{ secrets.REPORT_EMAIL }}
+          from: Playwright Automation <noreply@github.com>
+          body: |
+            SauceDemo Playwright Monthly Test telah selesai dijalankan.
+
+            **Status**: ${{ job.status }}
+            **Repository**: ${{ github.repository }}
+            **Waktu**: ${{ github.event.schedule || 'Manual Trigger' }}
+            
+            📊 **Download Full Report:**
+            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          convert_markdown: true
